@@ -14,14 +14,11 @@ ReactDOM.render(
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    /* eslint-disable global-require */
-    const NextApp = require('./components/App').default;
-
     ReactDOM.render(
       <AppContainer>
-        <NextApp />
+        <App />
       </AppContainer>,
-      rootElement,
+      document.getElementById('root'),
     );
   });
 }
