@@ -1,0 +1,31 @@
+@import '../colors';
+
+.nav {
+  background-color: $nile_blue;
+  display: table;
+  width: 100%;
+}
+
+$nav_padding_top_bottom: 0.5em;
+$nav_padding_sides: 1em;
+
+.title {
+  padding: $nav_padding_top_bottom $nav_padding_sides;
+  color: $sidecar_light;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.social-bar {
+  padding: $nav_padding_top_bottom * 1.5  $nav_padding_sides * 1.5;
+  vertical-align: middle;
+  text-align: right;
+}
+
+:global(.social-icon) {
+  margin: 0.25em;
+}
+
+:global(.social-icon .social-svg-mask) {
+  fill: $sidecar_light !important;
+}

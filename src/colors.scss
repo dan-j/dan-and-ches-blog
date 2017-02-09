@@ -1,0 +1,20 @@
+$nile_blue: #174C4F;
+$elm: #207178;
+$atomic_tangerine: #FF9666;
+$salomie: #FFE184;
+$sidecar: #F5E9BE;
+
+$nile_blue_light: lighten($nile_blue, 50%);
+$nile_blue_dark: darken($nile_blue, 25%);
+
+$elm_light: lighten($elm, 50%);
+$elm_dark: darken($elm, 25%);
+
+$atomic_tangerine_light: lighten($atomic_tangerine, 50%);
+$atomic_tangerine_dark: darken($atomic_tangerine, 25%);
+
+$salomie_light: lighten($salomie, 50%);
+$salomie_dark: darken($salomie, 25%);
+
+$sidecar_light: lighten($sidecar, 10%);
+$sidecar_dark: darken($sidecar, 25%);
