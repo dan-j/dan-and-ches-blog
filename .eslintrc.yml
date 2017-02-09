@@ -6,3 +6,10 @@ plugins:
   - import
 env:
   browser: true
+rules:
+  # don't complain about devDependencies in tests or webpack configs
+  import/no-extraneous-dependencies:
+    - 'error'
+    - devDependencies:
+      - '**/*.test.js'
+      - 'webpack*'
