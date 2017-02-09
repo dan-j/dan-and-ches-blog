@@ -24,6 +24,13 @@ module.exports = () => ({
       test: /\.jsx?$/,
       exclude: /(node_modules|dist)/,
       loaders: ['babel-loader'],
+    }, {
+      test: /\.s?css$/,
+      loaders: [
+        'style-loader?sourceMap',
+        'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+        'sass-loader?sourceMap',
+      ],
     }],
   },
 
@@ -32,5 +39,6 @@ module.exports = () => ({
       from: 'src/index.html',
     }]),
     new webpack.EnvironmentPlugin(['NODE_ENV']),
+    // new ExtractTextPlugin('styles.css'),
   ],
 });
