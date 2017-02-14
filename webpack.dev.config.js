@@ -21,7 +21,7 @@ module.exports = () => webpackMerge(
       historyApiFallback: true,
       contentBase: path.resolve(__dirname, 'dist/'),
       hot: true,
+      host: '0.0.0.0',
     },
   },
-  baseConfig(),
-);
+  baseConfig());

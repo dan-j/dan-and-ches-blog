@@ -1,0 +1,65 @@
+@import '../colors';
+@import '../breakpoints';
+
+.body {
+  padding: 1em;
+}
+
+.sidebar {
+  display: none;
+}
+
+@include tablet {
+  $sidebar-margin-left: 1em;
+  $sidebar-width: 15em;
+
+  .main {
+    margin-right: $sidebar-margin-left + $sidebar-width;
+  }
+
+  .sidebar {
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    padding: 0 1em;
+    background-color: white;
+    border: 1px solid $neutral_dark;
+    border-radius: 0.25em;
+
+    margin-left: $sidebar-margin-left;
+    width: $sidebar-width;
+  }
+}
+
+@include desktop {
+
+  $sidebar-margin-left: 1em;
+  $sidebar-width: 20em;
+
+  .main {
+    margin-right: $sidebar-margin-left + $sidebar-width;
+  }
+
+  .sidebar {
+    margin-left: $sidebar-margin-left;
+    width: $sidebar-width;
+  }
+}
+
+@include desktop-xl {
+  .body {
+    padding: 1em 2em;
+  }
+
+  $sidebar-margin-left: 1em;
+  $sidebar-width: 24em;
+
+  .main {
+    margin-right: $sidebar-margin-left + $sidebar-width;
+  }
+
+  .sidebar {
+    margin-left: $sidebar-margin-left;
+    width: $sidebar-width;
+  }
+}
