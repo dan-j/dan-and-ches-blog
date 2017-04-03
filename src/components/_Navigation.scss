@@ -3,9 +3,14 @@
 
 .nav {
   background-color: white;
+  padding: 1em 1em;
   display: table;
   width: 100%;
   border-bottom: 1px solid $neutral_dark;
+
+  @include desktop {
+    padding: 1em 2em;
+  }
 }
 
 $nav_padding_top_bottom: 0.5em;
@@ -13,26 +18,14 @@ $nav_padding_sides: 0.5em;
 
 .title {
   font-family: 'Amatic SC', 'Raleway', sans-serif;
-  padding: $nav_padding_top_bottom $nav_padding_sides;
   color: black;
   display: table-cell;
   vertical-align: middle;
-
-  @include tablet {
-    $nav_padding_sides: 1em;
-    padding: $nav_padding_top_bottom $nav_padding_sides;
-  }
 }
 
 .social-bar {
-  padding: $nav_padding_top_bottom * 1.5  $nav_padding_sides * 1.5;
   vertical-align: middle;
   text-align: right;
-
-  @include tablet {
-    $nav_padding_sides: 1em;
-    padding: $nav_padding_top_bottom * 1.5  $nav_padding_sides * 1.5;
-  }
 }
 
 :global(.social-icon) {

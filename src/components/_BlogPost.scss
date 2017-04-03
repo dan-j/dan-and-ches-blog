@@ -6,7 +6,6 @@
   max-width: 780px;
   margin: auto;
   padding: 0 1em;
-  border-radius: 0.25em;
   border: 1px solid $neutral_dark;
 
   display: table;
@@ -39,7 +38,6 @@
 
     @media (max-width: $small) {
       font-size: 0.75em;
-
     }
   }
 
