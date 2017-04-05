@@ -7,19 +7,19 @@ import './index.scss';
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
+    <AppContainer>
+        <App />
+    </AppContainer>,
   rootElement,
 );
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    ReactDOM.render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
+    module.hot.accept('./components/App', () => {
+        ReactDOM.render(
+            <AppContainer>
+                <App />
+            </AppContainer>,
       document.getElementById('root'),
     );
-  });
+    });
 }

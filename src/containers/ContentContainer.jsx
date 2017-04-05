@@ -2,53 +2,53 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import BlogPost from '../components/BlogPost';
 import SidebarContainer from './SidebarContainer';
+import api from '../services/api';
 import styles from './_ContentContainer.scss';
 
-const blog = {
-  title: 'Blog #1',
-  content: `Summary of this blog
+class ContentContainer extends React.Component {
 
-## Next Heading
+    constructor(props) {
+        super(props);
 
-Some other paragraph
+        // posts should be an array of objects with keys: title,
+        this.state = {
+            posts: null,
+        };
+    }
 
-    import React from 'react';
-    
-    export default MyComponent = ({ many, props, to, make, a, long, line }) => (
-      <div>
-        <h1>Header</h1>
-      </div>
-    );
+    componentDidMount() {
+        api.getBlogs()
+            .then(posts => this.setState({ posts }));
+    }
 
-Some inline \`code.here()\` looks good!
+    render() {
+        let content;
 
-Cats?!
+        if (this.state.posts) {
+            if (this.state.posts.length > 0) {
+                content = this.state.posts.map(post => (
+                    <BlogPost key={post.sys.id} {...post.fields} />
+                ));
+            } else {
+                content = <h3>There are no posts</h3>;
+            }
+        } else {
+            content = <h3>Loading posts</h3>;
+        }
 
-![image](https://placehold.it/900x300)
+        return (
+            <div styleName="body">
+                <div styleName="sidebar">
+                    <SidebarContainer />
+                </div>
+                <div styleName="main">
+                    {content}
+                </div>
+            </div>
+        );
+    }
 
-And then a list:
+}
 
-1. Item #1
-2. Item #2
-    - Subitem
-    - Another subitem
-3. Last item
-
-Bye ;)
-`,
-  author: 'Dan',
-  tags: ['test', 'react'],
-};
-
-const ContentContainer = () => (
-  <div styleName="body">
-    <div styleName="sidebar" >
-      <SidebarContainer />
-    </div>
-    <div styleName="main">
-      <BlogPost {...blog} />
-    </div>
-  </div>
-);
 
 export default CSSModules(ContentContainer, styles);
