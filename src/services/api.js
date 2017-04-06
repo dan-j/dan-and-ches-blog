@@ -8,8 +8,8 @@ function getClient() {
     }
 
     const options = {
-        accessToken: 'f65773a355fa25d5c63f0accee41503c7f4adc2c7cebc98f03c6c6ee82f29c4e',
-        space: 'e5qo3wz2rwcl',
+        accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+        space: process.env.CONTENTFUL_SPACE_ID,
     };
 
     client = contentful.createClient(options);
